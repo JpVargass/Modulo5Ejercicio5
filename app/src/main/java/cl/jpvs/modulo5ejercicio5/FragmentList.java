@@ -33,7 +33,6 @@ public class FragmentList extends Fragment {
     public FragmentList() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -48,10 +47,10 @@ public class FragmentList extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        //
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +66,9 @@ public class FragmentList extends Fragment {
         // Inflate the layout for this fragment
         FragmentListBinding binding = FragmentListBinding.inflate(getActivity().getLayoutInflater());
         AdapterWords adapter = new AdapterWords();
+        adapter.setData(getData());
 
+        binding.RecyclerView.setAdapter(adapter);
         return binding.getRoot();
     }
     public List<String> getData() {

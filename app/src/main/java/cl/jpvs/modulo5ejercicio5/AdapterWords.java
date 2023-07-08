@@ -17,7 +17,7 @@ public class AdapterWords extends RecyclerView.Adapter<AdapterWords.ViewHolder> 
     @Override
     public AdapterWords.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()));
-        return null;
+        return new ViewHolder(binding);
     }
 
     @Override
