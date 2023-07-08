@@ -31,6 +31,9 @@ public class AdapterWords extends RecyclerView.Adapter<AdapterWords.ViewHolder> 
     public int getItemCount() {
         return words.size();
     }
+    public void setData(List<String> data) {
+        this.words = data;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ItemBinding itemBinding;
@@ -40,7 +43,7 @@ public class AdapterWords extends RecyclerView.Adapter<AdapterWords.ViewHolder> 
             itemBinding = binding;
         }
         public void showInformation (String words) {
-            itemBinding.textView.setText((words);
+            itemBinding.textView.setText((words));
 
         }
     }

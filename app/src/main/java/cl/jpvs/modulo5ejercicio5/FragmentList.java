@@ -3,10 +3,16 @@ package cl.jpvs.modulo5ejercicio5;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cl.jpvs.modulo5ejercicio5.databinding.FragmentListBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +65,16 @@ public class FragmentList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false);
+        FragmentListBinding binding = FragmentListBinding.inflate(getActivity().getLayoutInflater());
+        AdapterWords adapter = new AdapterWords();
+
+        return binding.getRoot();
+    }
+    public List<String> getData() {
+        List<String> data = new ArrayList<>();
+        for(int i=0; i<20 ; i++){
+             data.add("word"+i);
+        }
+     return data;
     }
 }
